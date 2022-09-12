@@ -107,7 +107,7 @@ module.exports = {
             }
         
             const subscription = await Subscription.create(data);
-            return {status:200, result:data, redirect:true, url:'http://localhost:3000/'};
+            return {status:200, result:data, redirect:true, url:'https://rp-frontend.web.app/'};
         }
     },
     //service to get session info from stripe
