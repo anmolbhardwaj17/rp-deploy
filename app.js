@@ -9,7 +9,7 @@ require('./db/connection');
 const auth = require("./middleware/auth");
 app.use(express.json());
 app.use(cors({
-  origin: '*'
+  origin: 'https://rp-frontend.web.app/'
 }));
 
 const PORT = process.env.PORT ||5000;
