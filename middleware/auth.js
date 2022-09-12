@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 const config = process.env;
 
-const verifyToken = (req, res, next) => {
+const verifyToken = async (req, res, next) => {
     let token = null;
     const bearerHeader = req.headers["authorization"];
     if(typeof bearerHeader !== 'undefined'){
@@ -14,7 +14,7 @@ const verifyToken = (req, res, next) => {
         return res.status(403).send({status:403, message:"A token is required for authentication"});
     }
     try {
-        const decoded = jwt.verify(token, config.TOKEN_KEY);
+        const decoded = await jwt.verify(token, config.TOKEN_KEY);
         req.user = decoded;
     } catch (err) {
         return res.status(401).send({status:403, message:"Invalid Token"});

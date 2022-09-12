@@ -11,7 +11,7 @@ module.exports = {
 
         if (user && (await bcrypt.compare(password, user.password))) {
 
-            const token = jwt.sign(
+            const token = await jwt.sign(
                 { user_id: user._id, email },
                 process.env.TOKEN_KEY,
                 {
@@ -41,7 +41,7 @@ module.exports = {
           password: encryptedPassword,
         });
     
-        const token = jwt.sign(
+        const token = await jwt.sign(
           { user_id: user._id, email },
           process.env.TOKEN_KEY,
           {

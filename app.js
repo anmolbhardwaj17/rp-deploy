@@ -8,9 +8,7 @@ dotenv.config({path: './config.env'});
 require('./db/connection');
 const auth = require("./middleware/auth");
 app.use(express.json());
-app.use(cors({
-  origin: 'https://rp-frontend.web.app/'
-}));
+app.use(cors());
 
 const PORT = process.env.PORT ||5000;
 
