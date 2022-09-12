@@ -12,7 +12,6 @@ app.use(cors({
   origin: '*'
 }));
 
-const PORT = process.env.PORT ||5000;
 
 //calling services
 const authService = require('./services/authService.js')
