@@ -12,6 +12,7 @@ app.use(cors({
   origin: '*'
 }));
 
+const PORT = process.env.PORT ||5000;
 
 //calling services
 const authService = require('./services/authService.js')
@@ -108,6 +109,6 @@ app.get('*', function(req, res){
 });
 
 //port listener
-app.listen(process.env.PORT || 3000, () => {
+app.listen(PORT || 3000, () => {
     console.log(`Server is running on port ${PORT}`) 
 })
