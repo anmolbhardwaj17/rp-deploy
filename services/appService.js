@@ -44,8 +44,8 @@ module.exports = {
             return{status:409, message:"Subscription already exists"};
         }
         const session = await stripe.checkout.sessions.create({
-            success_url: `http://localhost:5000/order/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: 'http://localhost:5000/cancel',
+            success_url: `https://rp2022-backend.herokuapp.com/order/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: 'https://rp2022-backend.herokuapp.com/allprices',
             line_items: [
             {price: priceId, quantity: 1},
             ],
